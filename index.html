@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD MASUM BILLAH | Masum Vai BD - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --neon-green: #00ff88;
+            --dark-bg: #0a0b10;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Neon Glow Effects */
+        .neon-text {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .neon-border {
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+        }
+
+        /* Skill Bar Animation */
+        .skill-progress {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .skill-fill {
+            height: 100%;
+            background: var(--neon-green);
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.1, 0, 0.2, 1);
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* Hero Glitch Effect (Subtle) */
+        .glitch-wrapper {
+            position: relative;
+        }
+
+        /* Matrix Background Canvas */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .cta-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="matrix-canvas"></canvas>
+
+    <nav class="fixed w-full z-50 px-6 py-4 glass mt-4 mx-auto max-w-5xl left-0 right-0 top-0 flex justify-between items-center">
+        <div class="text-xl font-bold mono neon-text tracking-tighter">
+            &lt; MASUM VAI /&gt;
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
+            <a href="#about" class="hover:text-[#00ff88] transition">About</a>
+            <a href="#expertise" class="hover:text-[#00ff88] transition">Expertise</a>
+            <a href="#team" class="hover:text-[#00ff88] transition">Team</a>
+            <a href="#contact" class="hover:text-[#00ff88] transition">Contact</a>
+        </div>
+        <a href="https://t.me/masumvai" class="px-4 py-2 border border-[#00ff88] text-[#00ff88] rounded-md text-xs hover:bg-[#00ff88] hover:text-black transition duration-300">SUPPORT</a>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
+        <div class="text-center">
+            <div class="inline-block px-3 py-1 mb-4 rounded-full border border-white/10 bg-white/5 text-[10px] tracking-[0.3em] uppercase">
+                System Status: <span class="text-[#00ff88]">Online</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight">
+                MD MASUM <span class="neon-text">BILLAH</span>
+            </h1>
+            <div class="h-8 mb-8 text-xl md:text-2xl mono text-white/70">
+                <span id="typewriter"></span><span class="animate-pulse">|</span>
+            </div>
+            
+            <p class="max-w-xl mx-auto text-white/60 mb-10 leading-relaxed">
+                Founder & Owner of <strong>Cyber Solution Bangladesh (CSB)</strong>. Specializing in high-performance bot development, secure API automation, and strategic digital solutions.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://t.me/bdmasumvai" class="cta-btn bg-[#00ff88] text-black px-8 py-3 rounded-full font-bold">HIRE ME</a>
+                <a href="#contact" class="cta-btn glass border-white/20 px-8 py-3 rounded-full font-bold">GET IN TOUCH</a>
+            </div>
+        </div>
+
+        <div class="mt-16 flex gap-6 text-2xl text-white/40">
+            <a href="https://github.com/bdmasumvai" class="hover:text-[#00ff88] transition"><i class="fa-brands fa-github"></i></a>
+            <a href="https://facebook.com/mdmasumbillah122" class="hover:text-[#00ff88] transition"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://instagram.com/mdmasumbillah_122" class="hover:text-[#00ff88] transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@masumvaibd" class="hover:text-[#00ff88] transition"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </section>
+
+    <section id="about" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="glass p-8 relative">
+                <div class="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-[#00ff88]"></div>
+                <h2 class="text-3xl font-bold mb-6 italic">My Vision</h2>
+                <p class="text-white/70 leading-loose text-lg">
+                    "Success in this world and the hereafter through Halal efforts, while fulfilling my mother's dreams."
+                </p>
+                <div class="mt-8 grid grid-cols-2 gap-4">
+                    <div class="p-4 bg-white/5 rounded-lg border border-white/5">
+                        <i class="fa-solid fa-camera text-[#00ff88] mb-2"></i>
+                        <h4 class="text-xs font-bold uppercase">Photography</h4>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-lg border border-white/5">
+                        <i class="fa-solid fa-book text-[#00ff88] mb-2"></i>
+                        <h4 class="text-xs font-bold uppercase">Reading</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold mb-8 tracking-tight">LINGUISTIC <span class="neon-text">CAPABILITIES</span></h2>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm mono"><span>Bangla</span><span>70%</span></div>
+                        <div class="skill-progress"><div class="skill-fill" data-width="70%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm mono"><span>Urdu</span><span>50%</span></div>
+                        <div class="skill-progress"><div class="skill-fill" data-width="50%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm mono"><span>Hindi</span><span>40%</span></div>
+                        <div class="skill-progress"><div class="skill-fill" data-width="40%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm mono"><span>English</span><span>30%</span></div>
+                        <div class="skill-progress"><div class="skill-fill" data-width="30%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm mono"><span>Arabic</span><span>10%</span></div>
+                        <div class="skill-progress"><div class="skill-fill" data-width="10%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="bg-white/5 py-24 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">CYBER SOLUTION <span class="neon-text">BANGLADESH</span></h2>
+            <p class="text-white/50 mb-12">Leading the frontier of secure digital automation.</p>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="https://www.facebook.com/share/1HoU3QUvzF/" class="glass p-8 hover:bg-white/10 transition group">
+                    <i class="fa-brands fa-facebook text-4xl mb-4 group-hover:text-[#00ff88]"></i>
+                    <h3 class="font-bold">Official Page</h3>
+                    <p class="text-xs text-white/40 mt-2">Latest Updates</p>
+                </a>
+                <a href="https://www.facebook.com/share/g/16vK1o5Drz/" class="glass p-8 hover:bg-white/10 transition group">
+                    <i class="fa-solid fa-users text-4xl mb-4 group-hover:text-[#00ff88]"></i>
+                    <h3 class="font-bold">Community Group</h3>
+                    <p class="text-xs text-white/40 mt-2">Support & Discussion</p>
+                </a>
+                <a href="https://t.me/cyber_solution_bangladesh" class="glass p-8 hover:bg-white/10 transition group">
+                    <i class="fa-brands fa-telegram text-4xl mb-4 group-hover:text-[#00ff88]"></i>
+                    <h3 class="font-bold">Telegram Channel</h3>
+                    <p class="text-xs text-white/40 mt-2">Instant Alerts</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="pt-24 pb-12 px-6">
+        <div class="max-w-6xl mx-auto glass p-10 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Direct Communication</h3>
+                <p class="text-white/50 mb-6 italic">Secure Line Encrypted</p>
+                <ul class="space-y-4 mono text-sm">
+                    <li><i class="fa-solid fa-phone text-[#00ff88] mr-3"></i> +8801617072663</li>
+                    <li><i class="fa-brands fa-telegram text-[#00ff88] mr-3"></i> @bdmasumvai / @masumvai</li>
+                </ul>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-white/40 text-sm">
+                    Copyright &copy; 2026 <span class="text-[#00ff88]">MD MASUM BILLAH</span>.<br>
+                    All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Matrix Background Effect ---
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const rainDrops = Array.from({ length: columns }).fill(canvas.height);
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(10, 11, 16, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00ff88';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 30);
+
+        // --- Typewriter Effect ---
+        const textElement = document.getElementById('typewriter');
+        const phrases = ["Ethical Hacker", "Programmer", "Bot Developer", "Owner of CSB"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 150;
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+            setTimeout(type, typeSpeed);
+        }
+        type();
+
+        // --- Intersection Observer for Skill Bars ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.skill-fill');
+                    fills.forEach(fill => {
+                        fill.style.width = fill.getAttribute('data-width');
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('#about'));
+    </script>
+</body>
+</html>
