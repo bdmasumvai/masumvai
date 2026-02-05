@@ -1,94 +1,64 @@
-/* ===== ROOT SYSTEM ===== */
-:root {
-  --bg: #050505;
-  --card: rgba(255,255,255,0.06);
-  --text: #e5e5e5;
-  --accent: #2eea8c;
-  --blur: blur(18px);
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-  background: radial-gradient(circle at top, #0b0b0b, #050505);
-  color: var(--text);
+  background: #0b0b0b;
+  color: #e5e5e5;
   min-height: 100vh;
 }
 
-/* ===== 3D SCENE ===== */
-.scene {
-  perspective: 1200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+.hidden {
+  display: none;
 }
 
-/* ===== CARD ===== */
-.card-3d {
-  background: var(--card);
-  backdrop-filter: var(--blur);
-  border-radius: 24px;
-  padding: 48px;
+/* Boot screen */
+#boot {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #22c55e;
+  padding: 20px;
+  font-family: monospace;
+}
+
+/* Header */
+.header {
+  padding: 20px;
   text-align: center;
-  width: 90%;
-  max-width: 420px;
-
-  transform-style: preserve-3d;
-  transition: transform 0.2s ease-out;
-  box-shadow:
-    0 40px 80px rgba(0,0,0,0.6),
-    inset 0 0 0 1px rgba(255,255,255,0.06);
 }
 
-/* ===== AVATAR ===== */
-.avatar-wrap {
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 24px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent), transparent 70%);
-  padding: 4px;
-  transform: translateZ(60px);
+/* Main */
+.container {
+  text-align: center;
+  padding: 30px 20px 120px;
 }
 
-.avatar-wrap img {
-  width: 100%;
-  height: 100%;
+.avatar {
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  margin-bottom: 20px;
+  box-shadow: 0 0 25px rgba(34,197,94,0.5);
 }
 
-/* ===== TEXT ===== */
-h1 {
-  font-size: 2.2rem;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-  transform: translateZ(40px);
+.subtitle {
+  opacity: 0.8;
+  margin-bottom: 25px;
 }
 
-h2 {
-  font-size: 0.95rem;
-  font-weight: 400;
-  opacity: 0.75;
-  margin-bottom: 28px;
-  transform: translateZ(30px);
-}
-
-/* ===== ABOUT CODE ===== */
-.about pre {
-  background: rgba(0,0,0,0.35);
-  border-radius: 16px;
-  padding: 20px;
+/* Code box */
+.code-box {
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 18px;
   text-align: left;
-  font-size: 0.85rem;
-  color: var(--accent);
-  line-height: 1.6;
-  transform: translateZ(20px);
+  max-width: 420px;
+  margin: 0 auto;
+  font-family: monospace;
+  color: #22c55e;
 }
