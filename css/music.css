@@ -4,17 +4,24 @@
   left: 50%;
   transform: translateX(-50%);
   background: #111;
-  padding: 15px 20px;
-  border-radius: 15px;
+  border-radius: 14px;
+  padding: 14px 18px;
   display: flex;
-  gap: 15px;
   align-items: center;
-  box-shadow: 0 0 20px #0f0;
+  gap: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.music-info span {
+  font-size: 12px;
+  opacity: 0.7;
 }
 
 .music-card button {
-  background: #0f0;
+  background: #22c55e;
   border: none;
-  padding: 10px;
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
