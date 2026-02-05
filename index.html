@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Masum Vai | Tech Sensei</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/music.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- BOOT SCREEN -->
-<div id="boot">
-  <pre id="bootText"></pre>
-</div>
+<main class="scene">
+  <section class="hero card-3d">
+    <div class="avatar-wrap">
+      <img src="assets/profile.jpg" alt="Masum Vai" />
+    </div>
 
-<!-- MAIN SITE -->
-<div id="site" class="hidden">
-
-  <header>
     <h1>Masum Vai</h1>
-    <button id="menuBtn">☰</button>
-  </header>
+    <h2>Tech Sensei · Developer · Creator</h2>
 
-  <section class="hero">
-    <img src="assets/img/profile.jpg" class="profile">
-    <h2 id="typing"></h2>
-    <p>Tech Sensei | Developer | Creator</p>
-  </section>
-
-  <section class="about">
+    <div class="about">
 <pre>
 const masum = {
   name: "Masum Vai",
@@ -38,31 +27,10 @@ const masum = {
   status: "Always Learning"
 };
 </pre>
+    </div>
   </section>
+</main>
 
-  <section class="links">
-    <a href="https://t.me/masumvai" target="_blank">Telegram Profile</a>
-    <a href="https://t.me/Masum_Tech_Sensei" target="_blank">Telegram Channel</a>
-    <a href="https://github.com/bdmasumvai" target="_blank">GitHub</a>
-    <a href="https://www.youtube.com/@MasumvaiBd" target="_blank">YouTube</a>
-    <a href="https://www.facebook.com/CyberSolutionbd" target="_blank">Facebook Page</a>
-    <a href="https://facebook.com/groups/1353417175705702/" target="_blank">Facebook Group</a>
-  </section>
-
-</div>
-
-<!-- MUSIC PLAYER -->
-<div class="music-card">
-  <div>
-    <strong>Quran Recitation</strong><br>
-    <small>Peace of Mind</small>
-  </div>
-  <button id="playBtn">▶</button>
-  <audio id="audio" src="assets/music/quran.mp3"></audio>
-</div>
-
-<script src="js/boot.js"></script>
-<script src="js/main.js"></script>
-<script src="js/music.js"></script>
+<script src="js/parallax.js"></script>
 </body>
 </html>
