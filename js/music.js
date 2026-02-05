@@ -1,14 +1,14 @@
 const audio = document.getElementById("audio");
-const btn = document.getElementById("playBtn");
-let play = false;
+const btn = document.getElementById("musicBtn");
+let playing = false;
 
-btn.onclick = () => {
-  if (!play) {
+btn.addEventListener("click", () => {
+  if (!playing) {
     audio.play();
     btn.textContent = "⏸";
   } else {
     audio.pause();
     btn.textContent = "▶";
   }
-  play = !play;
-};
+  playing = !playing;
+});
