@@ -1,64 +1,227 @@
+:root {
+    --bg-color: #0f1115;
+    --card-bg: #181a20;
+    --card-hover: #1f2229;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent: #3b82f6; /* Professional Blue */
+    --border: #2d3748;
+    
+    --font-main: 'Inter', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: #0b0b0b;
-  color: #e5e5e5;
-  min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Boot Screen */
+#boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-code);
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.terminal-content {
+    width: 300px;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Layout */
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 3rem 1.5rem 8rem 1.5rem; /* Bottom padding for music player */
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.container.visible {
+    opacity: 1;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
-/* Boot screen */
-#boot {
-  position: fixed;
-  inset: 0;
-  background: #000;
-  color: #22c55e;
-  padding: 20px;
-  font-family: monospace;
+/* Profile */
+.profile-section {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-/* Header */
-.header {
-  padding: 20px;
-  text-align: center;
-}
-
-/* Main */
-.container {
-  text-align: center;
-  padding: 30px 20px 120px;
+.avatar-container {
+    margin-bottom: 1rem;
 }
 
 .avatar {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  box-shadow: 0 0 25px rgba(34,197,94,0.5);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
-.subtitle {
-  opacity: 0.8;
-  margin-bottom: 25px;
+.name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.25rem;
 }
 
-/* Code box */
+.title {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+/* Code Box */
+.code-box-wrapper {
+    margin-bottom: 2.5rem;
+}
+
 .code-box {
-  background: rgba(255,255,255,0.05);
-  border-radius: 14px;
-  padding: 18px;
-  text-align: left;
-  max-width: 420px;
-  margin: 0 auto;
-  font-family: monospace;
-  color: #22c55e;
+    background: #111;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.code-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+pre { white-space: pre-wrap; word-wrap: break-word; }
+.keyword { color: #c678dd; }
+.variable { color: #e5c07b; }
+.string { color: #98c379; }
+.key { color: #e06c75; }
+.operator { color: #56b6c2; }
+
+/* Social Links */
+.links-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 480px) {
+    .links-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.card:hover {
+    background: var(--card-hover);
+    transform: translateY(-2px);
+    border-color: #4b5563;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Brand Colors for Icons on Hover (Subtle) */
+.telegram-channel:hover .icon-box { color: #2da5e1; }
+.telegram:hover .icon-box { color: #229ED9; }
+.github:hover .icon-box { color: #fff; }
+.youtube:hover .icon-box { color: #ff0000; }
+.facebook-page:hover .icon-box { color: #1877F2; }
+.facebook-group:hover .icon-box { color: #1877F2; }
+
+.card-text h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.card-text p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.external-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #475569;
 }
