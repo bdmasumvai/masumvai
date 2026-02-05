@@ -1,42 +1,94 @@
-body {
+/* ===== ROOT SYSTEM ===== */
+:root {
+  --bg: #050505;
+  --card: rgba(255,255,255,0.06);
+  --text: #e5e5e5;
+  --accent: #2eea8c;
+  --blur: blur(18px);
+}
+
+* {
   margin: 0;
-  font-family: monospace;
-  background: #0a0a0a;
-  color: #0f0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
-.hidden { display: none; }
+body {
+  background: radial-gradient(circle at top, #0b0b0b, #050505);
+  color: var(--text);
+  min-height: 100vh;
+}
 
-header {
+/* ===== 3D SCENE ===== */
+.scene {
+  perspective: 1200px;
   display: flex;
-  justify-content: space-between;
-  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.hero {
+/* ===== CARD ===== */
+.card-3d {
+  background: var(--card);
+  backdrop-filter: var(--blur);
+  border-radius: 24px;
+  padding: 48px;
   text-align: center;
-  padding: 40px;
+  width: 90%;
+  max-width: 420px;
+
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
 }
 
-.profile {
-  width: 120px;
+/* ===== AVATAR ===== */
+.avatar-wrap {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 24px;
   border-radius: 50%;
-  box-shadow: 0 0 20px #0f0;
+  background: radial-gradient(circle, var(--accent), transparent 70%);
+  padding: 4px;
+  transform: translateZ(60px);
 }
 
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* ===== TEXT ===== */
+h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  transform: translateZ(40px);
+}
+
+h2 {
+  font-size: 0.95rem;
+  font-weight: 400;
+  opacity: 0.75;
+  margin-bottom: 28px;
+  transform: translateZ(30px);
+}
+
+/* ===== ABOUT CODE ===== */
 .about pre {
-  background: #111;
-  margin: 20px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 16px;
   padding: 20px;
-  border-radius: 10px;
-}
-
-.links a {
-  display: block;
-  margin: 10px;
-  padding: 12px;
-  background: #111;
-  color: #0f0;
-  text-decoration: none;
-  border-radius: 10px;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--accent);
+  line-height: 1.6;
+  transform: translateZ(20px);
 }
