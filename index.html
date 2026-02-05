@@ -4,93 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masum Vai | Tech Sensei</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/music.css">
+    <meta name="description" content="Personal bio of Masum Vai - Tech Sensei, Developer, and Creator from Bangladesh.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/music.css">
 </head>
-<body class="dark-theme">
+<body>
 
     <!-- Boot Screen -->
     <div id="boot-screen">
-        <div class="terminal-text" id="boot-logs"></div>
+        <div class="terminal-content">
+            <div id="terminal-lines"></div>
+            <span class="cursor">_</span>
+        </div>
     </div>
 
-    <main id="main-content" class="hidden">
-        <div class="container">
-            <!-- Header Section -->
-            <header class="profile-header">
-                <div class="profile-img-container">
-                    <img src="assets/img/profile.jpg" alt="Masum Vai" class="profile-img">
-                </div>
-                <h1 class="name">Masum Vai</h1>
-                <p class="subtitle">Tech Sensei · Developer · Creator</p>
-            </header>
+    <!-- Main Content -->
+    <main class="container fade-in hidden">
+        
+        <!-- Profile Section -->
+        <header class="profile-section">
+            <div class="avatar-container">
+                <!-- Place your image in assets/img/profile.jpg -->
+                <img src="assets/img/profile.jpg" alt="Masum Vai" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Masum+Vai&background=1e293b&color=fff'">
+            </div>
+            <h1 class="name">Masum Vai</h1>
+            <p class="title">Tech Sensei · Developer · Creator</p>
+        </header>
 
-            <!-- Code Info Box -->
-            <section class="code-box-wrapper">
-                <div class="code-box">
-                    <div class="code-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                        <span class="file-name">profile.js</span>
-                    </div>
-                    <pre><code><span class="keyword">const</span> <span class="variable">masum</span> = {
-    name: <span class="string">"Masum Vai"</span>,
-    country: <span class="string">"Bangladesh"</span>,
-    mindset: <span class="string">"Build · Learn · Share"</span>,
-    status: <span class="string">"Always Learning"</span>
+        <!-- Code Bio -->
+        <section class="code-box-wrapper">
+            <div class="code-box">
+                <div class="code-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <pre><code class="language-javascript"><span class="keyword">const</span> <span class="variable">masum</span> <span class="operator">=</span> {
+  <span class="key">name</span>: <span class="string">"Masum Vai"</span>,
+  <span class="key">country</span>: <span class="string">"Bangladesh"</span>,
+  <span class="key">mindset</span>: <span class="string">"Build · Learn · Share"</span>,
+  <span class="key">status</span>: <span class="string">"Always Learning"</span>
 };</code></pre>
-                </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Social Links Grid -->
-            <section class="social-links">
-                <a href="https://t.me/masumvai" target="_blank" class="link-card">
-                    <span class="label">Telegram</span>
-                    <span class="handle">@masumvai</span>
-                </a>
-                <a href="https://t.me/Masum_Tech_Sensei" target="_blank" class="link-card">
-                    <span class="label">Telegram Channel</span>
-                    <span class="handle">Tech Sensei</span>
-                </a>
-                <a href="https://github.com/bdmasumvai" target="_blank" class="link-card">
-                    <span class="label">GitHub</span>
-                    <span class="handle">@bdmasumvai</span>
-                </a>
-                <a href="https://www.youtube.com/@MasumvaiBd" target="_blank" class="link-card">
-                    <span class="label">YouTube</span>
-                    <span class="handle">@MasumvaiBd</span>
-                </a>
-                <a href="https://www.facebook.com/CyberSolutionbd" target="_blank" class="link-card">
-                    <span class="label">Facebook Page</span>
-                    <span class="handle">CyberSolutionbd</span>
-                </a>
-                <a href="https://facebook.com/groups/1353417175705702/" target="_blank" class="link-card">
-                    <span class="label">Facebook Group</span>
-                    <span class="handle">Community</span>
-                </a>
-            </section>
-        </div>
+        <!-- Social Links -->
+        <section class="links-section">
+            
+            <a href="https://t.me/Masum_Tech_Sensei" target="_blank" class="card telegram-channel">
+                <div class="icon-box"><i class="fa-brands fa-telegram"></i></div>
+                <div class="card-text">
+                    <h3>Channel</h3>
+                    <p>Tech Sensei</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+            </a>
+
+            <a href="https://t.me/masumvai" target="_blank" class="card telegram">
+                <div class="icon-box"><i class="fa-regular fa-paper-plane"></i></div>
+                <div class="card-text">
+                    <h3>Telegram</h3>
+                    <p>Direct Message</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/bdmasumvai" target="_blank" class="card github">
+                <div class="icon-box"><i class="fa-brands fa-github"></i></div>
+                <div class="card-text">
+                    <h3>GitHub</h3>
+                    <p>Source Code</p>
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/@MasumvaiBd" target="_blank" class="card youtube">
+                <div class="icon-box"><i class="fa-brands fa-youtube"></i></div>
+                <div class="card-text">
+                    <h3>YouTube</h3>
+                    <p>Tutorials</p>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/CyberSolutionbd" target="_blank" class="card facebook-page">
+                <div class="icon-box"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="card-text">
+                    <h3>Facebook Page</h3>
+                    <p>Cyber Solution</p>
+                </div>
+            </a>
+
+            <a href="https://facebook.com/groups/1353417175705702/" target="_blank" class="card facebook-group">
+                <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+                <div class="card-text">
+                    <h3>Facebook Group</h3>
+                    <p>Community</p>
+                </div>
+            </a>
+
+        </section>
+
+        <footer>
+            <p>&copy; <span id="year"></span> Masum Vai. All rights reserved.</p>
+        </footer>
+
     </main>
 
     <!-- Music Player -->
-    <div id="music-player" class="music-card">
-        <div class="music-info">
-            <span class="music-title">Quran Recitation</span>
-            <span class="music-subtitle">Peace of Mind</span>
+    <div class="music-player-container">
+        <div class="music-player">
+            <div class="music-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="music-info">
+                <span class="music-title">Quran Recitation</span>
+                <span class="music-status">Peace of Mind</span>
+            </div>
+            <button id="play-btn" class="control-btn" aria-label="Play Music">
+                <i class="fa-solid fa-play"></i>
+            </button>
         </div>
-        <button id="play-pause-btn" class="play-btn">
-            <svg id="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            <svg id="pause-icon" class="hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-        </button>
-        <audio id="bg-audio" src="assets/music/quran.mp3"></audio>
     </div>
+    
+    <audio id="audio-source" src="assets/music/quran.mp3" preload="none"></audio>
 
+    <!-- Scripts -->
     <script src="js/boot.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/music.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
