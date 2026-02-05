@@ -1,144 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masum Vai | Tech Sensei</title>
-    <meta name="description" content="Personal bio of Masum Vai - Tech Sensei, Developer, and Creator from Bangladesh.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
+    <title>Md Masum Billah | Programmer & AI Researcher</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --secondary: #3a7bd5;
+            --dark: #0f0f0f;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/music.css">
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            background: radial-gradient(circle at top, #1e3c72, #0f2027, #000);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80') center/cover;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-title {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Container & Cards */
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 50px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        /* Gallery Grid - Updated Path */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 15px;
+            height: 250px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Social Buttons */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: translateY(-5px);
+        }
+
+        .yt-color:hover { background: #ff0000; color: #fff; }
+        .fb-color:hover { background: #1877f2; color: #fff; }
+        .gh-color:hover { background: #fff; color: #000; }
+
+        /* Stats List */
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .stat-item {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.9rem; }
+
+        @media (max-width: 600px) {
+            .stats { grid-template-columns: 1fr; }
+            .profile-title { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Boot Screen -->
-    <div id="boot-screen">
-        <div class="terminal-content">
-            <div id="terminal-lines"></div>
-            <span class="cursor">_</span>
-        </div>
+<header>
+    <div class="header-content">
+        <h1 class="profile-title">মোঃ মাসুম বিল্লাহ (মাসুম ভাই)</h1>
+        <p style="font-size: 1.2rem; letter-spacing: 2px;">PROGRAMMER | AI RESEARCHER | SENSEI</p>
     </div>
+</header>
 
-    <!-- Main Content -->
-    <main class="container fade-in hidden">
-        
-        <!-- Profile Section -->
-        <header class="profile-section">
-            <div class="avatar-container">
-                <!-- Place your image in assets/img/profile.jpg -->
-                <img src="assets/img/profile.jpg" alt="Masum Vai" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Masum+Vai&background=1e293b&color=fff'">
-            </div>
-            <h1 class="name">Masum Vai</h1>
-            <p class="title">Tech Sensei · Developer · Creator</p>
-        </header>
-
-        <!-- Code Bio -->
-        <section class="code-box-wrapper">
-            <div class="code-box">
-                <div class="code-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                </div>
-                <pre><code class="language-javascript"><span class="keyword">const</span> <span class="variable">masum</span> <span class="operator">=</span> {
-  <span class="key">name</span>: <span class="string">"Masum Vai"</span>,
-  <span class="key">country</span>: <span class="string">"Bangladesh"</span>,
-  <span class="key">mindset</span>: <span class="string">"Build · Learn · Share"</span>,
-  <span class="key">status</span>: <span class="string">"Always Learning"</span>
-};</code></pre>
-            </div>
-        </section>
-
-        <!-- Social Links -->
-        <section class="links-section">
-            
-            <a href="https://t.me/Masum_Tech_Sensei" target="_blank" class="card telegram-channel">
-                <div class="icon-box"><i class="fa-brands fa-telegram"></i></div>
-                <div class="card-text">
-                    <h3>Channel</h3>
-                    <p>Tech Sensei</p>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
-            </a>
-
-            <a href="https://t.me/masumvai" target="_blank" class="card telegram">
-                <div class="icon-box"><i class="fa-regular fa-paper-plane"></i></div>
-                <div class="card-text">
-                    <h3>Telegram</h3>
-                    <p>Direct Message</p>
-                </div>
-            </a>
-
-            <a href="https://github.com/bdmasumvai" target="_blank" class="card github">
-                <div class="icon-box"><i class="fa-brands fa-github"></i></div>
-                <div class="card-text">
-                    <h3>GitHub</h3>
-                    <p>Source Code</p>
-                </div>
-            </a>
-
-            <a href="https://www.youtube.com/@MasumvaiBd" target="_blank" class="card youtube">
-                <div class="icon-box"><i class="fa-brands fa-youtube"></i></div>
-                <div class="card-text">
-                    <h3>YouTube</h3>
-                    <p>Tutorials</p>
-                </div>
-            </a>
-
-            <a href="https://www.facebook.com/CyberSolutionbd" target="_blank" class="card facebook-page">
-                <div class="icon-box"><i class="fa-brands fa-facebook-f"></i></div>
-                <div class="card-text">
-                    <h3>Facebook Page</h3>
-                    <p>Cyber Solution</p>
-                </div>
-            </a>
-
-            <a href="https://facebook.com/groups/1353417175705702/" target="_blank" class="card facebook-group">
-                <div class="icon-box"><i class="fa-solid fa-users"></i></div>
-                <div class="card-text">
-                    <h3>Facebook Group</h3>
-                    <p>Community</p>
-                </div>
-            </a>
-
-        </section>
-
-        <footer>
-            <p>&copy; <span id="year"></span> Masum Vai. All rights reserved.</p>
-        </footer>
-
-    </main>
-
-    <!-- Music Player -->
-    <div class="music-player-container">
-        <div class="music-player">
-            <div class="music-icon">
-                <i class="fa-solid fa-music"></i>
-            </div>
-            <div class="music-info">
-                <span class="music-title">Quran Recitation</span>
-                <span class="music-status">Peace of Mind</span>
-            </div>
-            <button id="play-btn" class="control-btn" aria-label="Play Music">
-                <i class="fa-solid fa-play"></i>
-            </button>
-        </div>
-    </div>
+<div class="container">
     
-    <audio id="audio-source" src="assets/music/quran.mp3" preload="none"></audio>
+    <div class="card">
+        <h2><i class="fas fa-microchip"></i> প্রোফাইল সামারি</h2>
+        <div class="stats">
+            <div class="stat-item"><b>পেশা:</b> শিক্ষার্থী ও রিসার্চার</div>
+            <div class="stat-item"><b>বাসস্থান:</b> সিরাজগঞ্জ, বাংলাদেশ</div>
+            <div class="stat-item"><b>অনলাইন টাইম:</b> ০৩:৩০ PM (BD)</div>
+            <div class="stat-item"><b>দক্ষতা:</b> Programming & AI Research</div>
+        </div>
+        <p style="margin-top: 20px; color: #ccc;">"মায়ের স্বপ্ন পূরণ এবং পরকালের সফলতা অর্জনের লক্ষ্যে প্রযুক্তির সাথে আমার এই পথচলা।"</p>
+    </div>
 
-    <!-- Scripts -->
-    <script src="js/boot.js"></script>
-    <script src="js/music.js"></script>
-    <script src="js/main.js"></script>
+    <div class="card">
+        <h2><i class="fas fa-images"></i> গ্যালারি</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="images/photo1.jpg" alt="Masum Billah Photo 1"></div>
+            <div class="gallery-item"><img src="images/photo2.jpg" alt="Masum Billah Photo 2"></div>
+            <div class="gallery-item"><img src="images/photo3.jpg" alt="Masum Billah Photo 3"></div>
+            <div class="gallery-item"><img src="images/photo4.jpg" alt="Masum Billah Photo 4"></div>
+            <div class="gallery-item"><img src="images/photo5.jpg" alt="Masum Billah Photo 5"></div>
+            <div class="gallery-item"><img src="images/photo6.jpg" alt="Masum Billah Photo 6"></div>
+        </div>
+    </div>
+
+    <div class="card" style="text-align: center;">
+        <h2><i class="fas fa-globe"></i> নেটওয়ার্কিং</h2>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@Masumvaibd" class="btn yt-color"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://github.com/bdmasumvai" class="btn gh-color"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.facebook.com/CyberSolutionbd" class="btn fb-color"><i class="fab fa-facebook"></i> FB Page</a>
+            <a href="https://facebook.com/groups/1353417175705702/" class="btn fb-color"><i class="fas fa-users"></i> Community</a>
+            <a href="https://t.me/bdmasumvai" class="btn"><i class="fab fa-telegram"></i> Telegram</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 MD MASUM BILLAH. Built for Masum Tech Sensei Community.</p>
+</footer>
+
 </body>
 </html>
