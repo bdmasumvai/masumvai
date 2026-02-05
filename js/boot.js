@@ -1,25 +1,25 @@
-const bootLines = [
+const lines = [
   "Initializing system...",
-  "Checking system files... [OK]",
-  "Loading user profile... [OK]",
-  "Mounting animations... [OK]",
-  "Access Granted",
+  "Checking files... [OK]",
+  "Loading profile... [OK]",
+  "Starting interface... [OK]",
   "Welcome, Masum Vai"
 ];
 
-let i = 0;
 const bootText = document.getElementById("bootText");
+let index = 0;
 
-function boot() {
-  if (i < bootLines.length) {
-    bootText.textContent += bootLines[i] + "\n";
-    i++;
-    setTimeout(boot, 600);
+function runBoot() {
+  if (index < lines.length) {
+    bootText.textContent += lines[index] + "\n";
+    index++;
+    setTimeout(runBoot, 500);
   } else {
     setTimeout(() => {
       document.getElementById("boot").style.display = "none";
-      document.getElementById("site").classList.remove("hidden");
-    }, 1000);
+      document.getElementById("app").classList.remove("hidden");
+    }, 800);
   }
 }
-boot();
+
+runBoot();
