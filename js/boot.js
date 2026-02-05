@@ -1,25 +1,44 @@
-const lines = [
-  "Initializing system...",
-  "Checking files... [OK]",
-  "Loading profile... [OK]",
-  "Starting interface... [OK]",
-  "Welcome, Masum Vai"
-];
+document.addEventListener("DOMContentLoaded", () => {
+    const lines = [
+        "Initializing system...",
+        "Loading profile...",
+        "Ready."
+    ];
 
-const bootText = document.getElementById("bootText");
-let index = 0;
+    const terminalLines = document.getElementById("terminal-lines");
+    const bootScreen = document.getElementById("boot-screen");
+    const mainContent = document.querySelector("main");
+    
+    let lineIndex = 0;
 
-function runBoot() {
-  if (index < lines.length) {
-    bootText.textContent += lines[index] + "\n";
-    index++;
-    setTimeout(runBoot, 500);
-  } else {
-    setTimeout(() => {
-      document.getElementById("boot").style.display = "none";
-      document.getElementById("app").classList.remove("hidden");
-    }, 800);
-  }
-}
+    function addLine() {
+        if (lineIndex < lines.length) {
+            const p = document.createElement("p");
+            p.textContent = `> ${lines[lineIndex]}`;
+            p.style.marginBottom = "5px";
+            terminalLines.appendChild(p);
+            lineIndex++;
+            
+            // Random typing delay
+            setTimeout(addLine, 400); 
+        } else {
+            // Finished
+            setTimeout(() => {
+                bootScreen.style.opacity = "0";
+                bootScreen.style.transition = "opacity 0.5s ease";
+                
+                mainContent.classList.remove("hidden");
+                // Trigger reflow
+                void mainContent.offsetWidth; 
+                mainContent.classList.add("visible");
 
-runBoot();
+                setTimeout(() => {
+                    bootScreen.style.display = "none";
+                }, 500);
+            }, 800);
+        }
+    }
+
+    // Start boot sequence
+    setTimeout(addLine, 500);
+});
