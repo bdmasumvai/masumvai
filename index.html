@@ -1,59 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Masum Vai | Tech Sensei</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/music.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masum Vai | Tech Sensei</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark-theme">
 
-<!-- BOOT SCREEN -->
-<div id="boot">
-  <pre id="bootText"></pre>
-</div>
-
-<!-- MAIN CONTENT -->
-<div id="app" class="hidden">
-
-  <header class="header">
-    <h1>Masum Vai</h1>
-  </header>
-
-  <main class="container">
-    <img src="assets/img/profile.jpg" alt="Masum Vai" class="avatar">
-
-    <h2>Hi, I'm Masum Vai</h2>
-    <p class="subtitle">Tech Sensei · Developer · Creator</p>
-
-    <div class="code-box">
-<pre>
-const masum = {
-  name: "Masum Vai",
-  country: "Bangladesh",
-  mindset: "Build • Learn • Share",
-  status: "Always Learning"
-};
-</pre>
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+        <div class="terminal-text" id="boot-logs"></div>
     </div>
-  </main>
 
-</div>
+    <main id="main-content" class="hidden">
+        <div class="container">
+            <!-- Header Section -->
+            <header class="profile-header">
+                <div class="profile-img-container">
+                    <img src="assets/img/profile.jpg" alt="Masum Vai" class="profile-img">
+                </div>
+                <h1 class="name">Masum Vai</h1>
+                <p class="subtitle">Tech Sensei · Developer · Creator</p>
+            </header>
 
-<!-- MUSIC PLAYER -->
-<div class="music-card">
-  <div class="music-info">
-    <strong>Quran Recitation</strong>
-    <span>Peace of Mind</span>
-  </div>
-  <button id="musicBtn">▶</button>
-  <audio id="audio" src="assets/music/quran.mp3"></audio>
-</div>
+            <!-- Code Info Box -->
+            <section class="code-box-wrapper">
+                <div class="code-box">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="file-name">profile.js</span>
+                    </div>
+                    <pre><code><span class="keyword">const</span> <span class="variable">masum</span> = {
+    name: <span class="string">"Masum Vai"</span>,
+    country: <span class="string">"Bangladesh"</span>,
+    mindset: <span class="string">"Build · Learn · Share"</span>,
+    status: <span class="string">"Always Learning"</span>
+};</code></pre>
+                </div>
+            </section>
 
-<script src="js/boot.js"></script>
-<script src="js/main.js"></script>
-<script src="js/music.js"></script>
+            <!-- Social Links Grid -->
+            <section class="social-links">
+                <a href="https://t.me/masumvai" target="_blank" class="link-card">
+                    <span class="label">Telegram</span>
+                    <span class="handle">@masumvai</span>
+                </a>
+                <a href="https://t.me/Masum_Tech_Sensei" target="_blank" class="link-card">
+                    <span class="label">Telegram Channel</span>
+                    <span class="handle">Tech Sensei</span>
+                </a>
+                <a href="https://github.com/bdmasumvai" target="_blank" class="link-card">
+                    <span class="label">GitHub</span>
+                    <span class="handle">@bdmasumvai</span>
+                </a>
+                <a href="https://www.youtube.com/@MasumvaiBd" target="_blank" class="link-card">
+                    <span class="label">YouTube</span>
+                    <span class="handle">@MasumvaiBd</span>
+                </a>
+                <a href="https://www.facebook.com/CyberSolutionbd" target="_blank" class="link-card">
+                    <span class="label">Facebook Page</span>
+                    <span class="handle">CyberSolutionbd</span>
+                </a>
+                <a href="https://facebook.com/groups/1353417175705702/" target="_blank" class="link-card">
+                    <span class="label">Facebook Group</span>
+                    <span class="handle">Community</span>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Music Player -->
+    <div id="music-player" class="music-card">
+        <div class="music-info">
+            <span class="music-title">Quran Recitation</span>
+            <span class="music-subtitle">Peace of Mind</span>
+        </div>
+        <button id="play-pause-btn" class="play-btn">
+            <svg id="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg id="pause-icon" class="hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <audio id="bg-audio" src="assets/music/quran.mp3"></audio>
+    </div>
+
+    <script src="js/boot.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/music.js"></script>
 </body>
 </html>
