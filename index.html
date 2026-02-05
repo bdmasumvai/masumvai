@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Masum Vai | Tech Sensei</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/music.css">
 </head>
 <body>
 
-<main class="scene">
-  <section class="hero card-3d">
-    <div class="avatar-wrap">
-      <img src="assets/profile.jpg" alt="Masum Vai" />
-    </div>
+<!-- BOOT SCREEN -->
+<div id="boot">
+  <pre id="bootText"></pre>
+</div>
 
+<!-- MAIN CONTENT -->
+<div id="app" class="hidden">
+
+  <header class="header">
     <h1>Masum Vai</h1>
-    <h2>Tech Sensei · Developer · Creator</h2>
+  </header>
 
-    <div class="about">
+  <main class="container">
+    <img src="assets/img/profile.jpg" alt="Masum Vai" class="avatar">
+
+    <h2>Hi, I'm Masum Vai</h2>
+    <p class="subtitle">Tech Sensei · Developer · Creator</p>
+
+    <div class="code-box">
 <pre>
 const masum = {
   name: "Masum Vai",
@@ -28,9 +38,22 @@ const masum = {
 };
 </pre>
     </div>
-  </section>
-</main>
+  </main>
 
-<script src="js/parallax.js"></script>
+</div>
+
+<!-- MUSIC PLAYER -->
+<div class="music-card">
+  <div class="music-info">
+    <strong>Quran Recitation</strong>
+    <span>Peace of Mind</span>
+  </div>
+  <button id="musicBtn">▶</button>
+  <audio id="audio" src="assets/music/quran.mp3"></audio>
+</div>
+
+<script src="js/boot.js"></script>
+<script src="js/main.js"></script>
+<script src="js/music.js"></script>
 </body>
 </html>
