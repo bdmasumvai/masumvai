@@ -1,0 +1,403 @@
+/* Custom variables matching user's exact design assets */
+:root {
+    --bg-base: #fdf8f2;
+    --bg-wave: #c2a383;
+    --text-primary: #b08d68;
+    --text-dark: #5c4630;
+    --button-bg: #dcbfa2;
+    --button-text: #ffffff;
+    --glow-color: rgba(194, 163, 131, 0.6);
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-base);
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Top Wave Accent */
+.top-wave-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 240px;
+    z-index: 1;
+}
+.top-wave-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Content Frame Container */
+.portfolio-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 24px 120px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Avatar Elements */
+.profile-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.curved-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.profile-avatar-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 25px auto;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0px 8px 24px rgba(92, 70, 48, 0.15);
+    position: relative;
+    z-index: 2;
+}
+
+.animated-ring {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    border: 2px dashed var(--bg-wave);
+    animation: rotateRing 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rotateRing {
+    100% { transform: rotate(360deg); }
+}
+
+.tagline {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.6;
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+
+/* Timeline Layout Navigation Buttons */
+.navigation-timeline {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.center-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--bg-wave);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.nav-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-btn {
+    width: 46%;
+    padding: 14px 10px;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+}
+
+.nav-btn:hover {
+    transform: translateY(-3px);
+    background-color: var(--bg-wave);
+    box-shadow: 0px 6px 15px rgba(194, 163, 131, 0.4);
+}
+
+/* Music Button Active Pulsing State */
+.nav-btn.music-playing {
+    background-color: var(--bg-wave);
+    animation: glowPulse 1.5s infinite alternate;
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 5px var(--glow-color); }
+    100% { box-shadow: 0 0 20px var(--glow-color); }
+}
+
+/* Content Container Cards */
+.content-display-area {
+    width: 100%;
+}
+
+.content-section {
+    display: none;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(92, 70, 48, 0.06);
+    margin-top: 10px;
+    animation: smoothSlideUp 0.5s ease forwards;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes smoothSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-section h3 {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--bg-base);
+    padding-bottom: 5px;
+}
+
+.content-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: #6e5843;
+}
+
+/* Services Presentation Design */
+.services-list {
+    list-style: none;
+}
+
+.services-list li {
+    padding: 12px 15px;
+    background: var(--bg-base);
+    margin-bottom: 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.2s ease;
+}
+
+.services-list li:hover {
+    transform: translateX(5px);
+    color: var(--text-primary);
+}
+
+.services-list li i {
+    color: var(--bg-wave);
+    width: 20px;
+}
+
+/* Contact Module Styling */
+.contact-card a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+.contact-card a:hover {
+    text-decoration: underline;
+}
+.contact-card p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Sticky Bottom Footer Navigation Bar */
+.social-footer {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: calc(100% - 48px);
+    max-width: 450px;
+}
+
+.social-bar {
+    background-color: var(--button-bg);
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 8px 30px rgba(92, 70, 48, 0.2);
+}
+
+.social-trigger-btn {
+    background: none;
+    border: none;
+    color: var(--button-text);
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    padding: 5px;
+}
+
+.social-trigger-btn:hover {
+    transform: scale(1.2);
+    color: var(--text-dark);
+}
+
+/* Bottom Sheet Drawer Modal Mechanism */
+.popup-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(92, 70, 48, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.popup-backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.bottom-popup {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 25px 24px 40px 24px;
+    box-shadow: 0px -10px 40px rgba(0,0,0,0.15);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    z-index: 101;
+}
+
+.popup-backdrop.show .bottom-popup {
+    transform: translate(-50%, 0);
+}
+
+.popup-drag-handle {
+    width: 40px;
+    height: 5px;
+    background-color: #e0d5c8;
+    border-radius: 10px;
+    margin: 0 auto 20px auto;
+}
+
+.bottom-popup h4 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.popup-links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.popup-link-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 20px;
+    background-color: var(--bg-base);
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+}
+
+.popup-link-item:hover {
+    background-color: var(--button-bg);
+    color: white;
+    transform: scale(1.01);
+}
+
+.popup-link-item i {
+    font-size: 1.3rem;
+    color: var(--bg-wave);
+}
+.popup-link-item:hover i {
+    color: white;
+}
+
+.close-popup-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    background-color: #f0e6dc;
+    color: var(--text-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.close-popup-btn:hover {
+    background-color: #e5d8cc;
+}
