@@ -1,207 +1,109 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Masum Billah | Programmer & AI Researcher</title>
+    <title>Masum Vai | Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #00d2ff;
-            --secondary: #3a7bd5;
-            --dark: #0f0f0f;
-            --card-bg: rgba(255, 255, 255, 0.05);
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            margin: 0;
-            background: radial-gradient(circle at top, #1e3c72, #0f2027, #000);
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        /* Header Section */
-        header {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: url('https://github.com/bdmasumvai/masumvai/blob/main/images/images.jpg') center/cover;
-            position: relative;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile-title {
-            font-size: 3rem;
-            margin: 0;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Container & Cards */
-        .container {
-            max-width: 1000px;
-            margin: -50px auto 50px;
-            padding: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        }
-
-        /* Gallery Grid - Updated Path */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 15px;
-            height: 250px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Social Buttons */
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .btn:hover {
-            background: var(--primary);
-            color: #000;
-            transform: translateY(-5px);
-        }
-
-        .yt-color:hover { background: #ff0000; color: #fff; }
-        .fb-color:hover { background: #1877f2; color: #fff; }
-        .gh-color:hover { background: #fff; color: #000; }
-
-        /* Stats List */
-        .stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .stat-item {
-            background: rgba(0,0,0,0.3);
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary);
-        }
-
-        footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.9rem; }
-
-        @media (max-width: 600px) {
-            .stats { grid-template-columns: 1fr; }
-            .profile-title { font-size: 2rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <div class="header-content">
-        <h1 class="profile-title">Md. Masum Billah</h1>
-        <h1 class="profile-title">Masum Vai</h1>
-        <p style="font-size: 1.2rem; letter-spacing: 2px;">PROGRAMMER | AI RESEARCHER | SENSEI</p>
+    <div class="top-wave-container">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="#c2a383" fill-opacity="1" d="M0,160L120,176C240,192,480,224,720,224C960,224,1200,192,1320,176L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
+        </svg>
     </div>
-</header>
 
-<div class="container">
-    
-    <div class="card">
-        <h2><i class="fas fa-microchip"></i> প্রোফাইল সামারি</h2>
-        <div class="stats">
-            <div class="stat-item"><b>পেশা:</b> শিক্ষার্থী ও রিসার্চার</div>
-            <div class="stat-item"><b>বাসস্থান:</b> সিরাজগঞ্জ, বাংলাদেশ</div>
-            <div class="stat-item"><b>অনলাইন টাইম:</b> ০৩:৩০ PM (BD)</div>
-            <div class="stat-item"><b>দক্ষতা:</b> Programming & AI Research</div>
+    <main class="portfolio-container">
+        <header class="profile-header">
+            <h1 class="curved-title">MASUM VAI</h1>
+            <div class="profile-avatar-wrapper">
+                <div class="animated-ring"></div>
+                <img src="images/profile.jpg" alt="Masum Vai" class="profile-avatar" onerror="this.src='https://via.placeholder.com/180/c2a383/ffffff?text=Masum+Vai'">
+            </div>
+            <p class="tagline">I WORK WITH <span id="typing-text"></span></p>
+        </header>
+
+        <section class="navigation-timeline">
+            <div class="center-line"></div>
+            
+            <div class="nav-row">
+                <button class="nav-btn" data-target="about">ABOUT</button>
+                <button class="nav-btn" data-target="services">SERVICES</button>
+            </div>
+            
+            <div class="nav-row">
+                <button class="nav-btn" id="music-btn">MUSIC</button>
+                <button class="nav-btn" data-target="contact">CONTACT</button>
+            </div>
+        </section>
+
+        <section class="content-display-area">
+            <div id="about" class="content-section">
+                <h3>About Me</h3>
+                <p>Hello Sir/Madam,</p>
+                <p>I am <strong>Mohammad Masum Billah</strong>. Many people respectfully and lovingly call me “Masum Vai.” I was born in a small village in Bangladesh, in a poor family.</p>
+                <p>From an early age, I had a strong interest in the online world. Spending so much time online helped me develop many skills in this short life, including Programming, Graphic Design, Web Design, Technology, Cyber Security, and more.</p>
+                <p>Currently, the name of my online company is <strong>CSB</strong>, which stands for <strong>Cyber Solution Bangladesh</strong>.</p>
+                <p>Today, I am a successful person. Please pray for me so that I can achieve even more in life and fulfill the dreams of my parents, wife, and children.</p>
+                <p>Thank You.</p>
+            </div>
+
+            <div id="services" class="content-section">
+                <h3>Our Services</h3>
+                <ul class="services-list">
+                    <li><i class="fa-solid fa-palette"></i> Graphic Design</li>
+                    <li><i class="fa-solid fa-code"></i> Programming</li>
+                    <li><i class="fa-solid fa-laptop-code"></i> Web Design</li>
+                    <li><i class="fa-solid fa-microchip"></i> Online Technology</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> Cyber Security</li>
+                </ul>
+            </div>
+
+            <div id="contact" class="content-section">
+                <h3>Get In Touch</h3>
+                <div class="contact-card">
+                    <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> <a href="" id="ctx-phone"></a></p>
+                    <p><i class="fa-solid fa-paper-plane"></i> <strong>Telegram:</strong> <a href="" id="ctx-tg" target="_blank">Message Me</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="social-footer">
+        <div class="social-bar">
+            <button class="social-trigger-btn"><i class="fa-brands fa-telegram"></i></button>
+            <button class="social-trigger-btn"><i class="fa-brands fa-youtube"></i></button>
+            <button class="social-trigger-btn"><i class="fa-brands fa-facebook"></i></button>
+            <button class="social-trigger-btn"><i class="fa-brands fa-whatsapp"></i></button>
+            <button class="social-trigger-btn"><i class="fa-brands fa-instagram"></i></button>
+            <button class="social-trigger-btn"><i class="fa-brands fa-x-twitter"></i></button>
         </div>
-        <p style="margin-top: 20px; color: #ccc;">"মায়ের স্বপ্ন পূরণ এবং পরকালের সফলতা অর্জনের লক্ষ্যে প্রযুক্তির সাথে আমার এই পথচলা।"</p>
-    </div>
+    </footer>
 
-    <div class="card">
-        <h2><i class="fas fa-images"></i> গ্যালারি</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/photo1.jpg" alt="Masum Billah Photo 1"></div>
-            <div class="gallery-item"><img src="images/photo2.jpg" alt="Masum Billah Photo 2"></div>
-            <div class="gallery-item"><img src="images/photo3.jpg" alt="Masum Billah Photo 3"></div>
-            <div class="gallery-item"><img src="images/photo4.jpg" alt="Masum Billah Photo 4"></div>
-            <div class="gallery-item"><img src="images/photo5.jpg" alt="Masum Billah Photo 5"></div>
-            <div class="gallery-item"><img src="images/photo6.jpg" alt="Masum Billah Photo 6"></div>
+    <div class="popup-backdrop" id="popupBackdrop">
+        <div class="bottom-popup" id="bottomPopup">
+            <div class="popup-drag-handle"></div>
+            <h4>Connect Channels</h4>
+            <div class="popup-links-grid">
+                <a href="#" id="pop-tg" target="_blank" class="popup-link-item"><i class="fa-brands fa-telegram"></i> Telegram Channel</a>
+                <a href="#" id="pop-yt" target="_blank" class="popup-link-item"><i class="fa-brands fa-youtube"></i> YouTube Channel</a>
+                <a href="#" id="pop-fb" target="_blank" class="popup-link-item"><i class="fa-brands fa-facebook"></i> Facebook Page</a>
+                <a href="#" id="pop-wa" target="_blank" class="popup-link-item"><i class="fa-brands fa-whatsapp"></i> WhatsApp IT CSB</a>
+                <a href="#" id="pop-ig" target="_blank" class="popup-link-item"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="#" id="pop-tw" target="_blank" class="popup-link-item"><i class="fa-brands fa-x-twitter"></i> Twitter / X</a>
+            </div>
+            <button class="close-popup-btn" id="closePopup">Close</button>
         </div>
     </div>
 
-    <div class="card" style="text-align: center;">
-        <h2><i class="fas fa-globe"></i> নেটওয়ার্কিং</h2>
-        <div class="social-links">
-            <a href="https://www.youtube.com/@Masumvaibd" class="btn yt-color"><i class="fab fa-youtube"></i> YouTube</a>
-            <a href="https://github.com/bdmasumvai" class="btn gh-color"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.facebook.com/CyberSolutionbd" class="btn fb-color"><i class="fab fa-facebook"></i> FB Page</a>
-            <a href="https://facebook.com/groups/1353417175705702/" class="btn fb-color"><i class="fas fa-users"></i> Community</a>
-            <a href="https://t.me/bdmasumvai" class="btn"><i class="fab fa-telegram"></i> Telegram</a>
-        </div>
-    </div>
+    <audio id="bg-audio" loop></audio>
 
-</div>
-
-<footer>
-    <p>&copy; 2026 MD MASUM BILLAH. Built for Masum Tech Sensei Community.</p>
-</footer>
-
+    <script src="config.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
